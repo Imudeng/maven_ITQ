@@ -3,11 +3,15 @@ package tests_collection_1;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-
 import java.util.Arrays;
 import java.util.List;
 
-class MassiveTests {
+public class Alltests {
+    public static void main(String[] args) {
+
+    }
+}
+class MassiveTests1 {
     List<String> userList = Arrays.asList("Cat", "Dog", "Parrot");
 
     @BeforeClass
@@ -41,11 +45,11 @@ class MassiveTests {
     }
 
     @BeforeGroups ("estkot")
-        public void beforeGroupCat() {
+    public void beforeGroupCat() {
         System.out.println("vot eto testi dlia kota");
     }
     @AfterGroups ("estkot")
-        public void afterGroupCat() {
+    public void afterGroupCat() {
         System.out.println("testi pro kota proiden");
     }
     @Test(description = "Optimalnoe kolichetvo pitomzev", groups ="estkot.spec")
@@ -75,9 +79,3 @@ class MassiveTests {
     }
 
 }
-
-
-
-
-
-
