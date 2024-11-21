@@ -10,6 +10,15 @@ import java.util.List;
 class MassiveTests {
     List<String> userList = Arrays.asList("Cat", "Dog", "Parrot");
 
+    @BeforeSuite
+    public void beforeSuit() {
+        System.out.println("Nachali SuitMassiveTest");
+    }
+    @AfterSuite
+    public void afterSuit() {
+        System.out.println("Zakochili SuitMassiveTest");
+    }
+
     @BeforeClass
     public void beforeClass() {
         System.out.println("Test classa Massiv");
@@ -17,7 +26,7 @@ class MassiveTests {
 
     @BeforeTest
     public void beforeFirst() {
-        System.out.println("Nachnem test");
+        System.out.println("Nachnem MassiveTests");
     }
 
     @BeforeMethod
@@ -37,7 +46,7 @@ class MassiveTests {
 
     @AfterTest
     public void afterThird() {
-        System.out.println("Zakonchili test");
+        System.out.println("Zakonchili MassiveTests");
     }
 
     @BeforeGroups ("estkot")

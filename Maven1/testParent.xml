@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+    <suite name="ParentTestSuite">
+    <suite-files>
+        <suite-file path="testMassive.xml"/>
+        <suite-file path="testNumber.xml"/>
+        <suite-file path="testWord.xml"/>
+    </suite-files>
+    </suite>
+
+
+
