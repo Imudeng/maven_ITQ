@@ -1,6 +1,8 @@
 package tests_collection_1;
 
 import org.testng.Assert;
+import org.testng.ITestNGMethod;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 
@@ -8,7 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 class MassiveTests {
+
     List<String> userList = Arrays.asList("Cat", "Dog", "Parrot");
+    int testNumber = 0;
 
     @BeforeSuite
     public void beforeSuit() {
@@ -31,12 +35,14 @@ class MassiveTests {
 
     @BeforeMethod
     public void beforeMethod() {
-        System.out.println("Nachali test");
+        testNumber++;
+        System.out.println("Nachali test "+(testNumber));
     }
 
     @AfterMethod
-    public void afterMethod() {
-        System.out.println("Zakochili test");
+    public void afterMethod(ITestNGMethod result) {
+        String testName = result.getMethodName();
+        System.out.println("Zakochili test"+" "+testName);
     }
 
     @AfterClass

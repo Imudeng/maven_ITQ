@@ -4,24 +4,26 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class NumberTests {
-    int userNumber = 5;
+    int userNumber = 4;
+
     @BeforeSuite
     public void beforeSuit() {
-        System.out.println("Nachali SuitMassiveTest");
+        System.out.println("Nachali SuitNumberTest");
     }
+
     @AfterSuite
     public void afterSuit() {
-        System.out.println("Zakochili SuitMassiveTest");
+        System.out.println("Zakochili SuitNumberTest");
     }
 
     @BeforeClass
     public void beforeClass() {
-        System.out.println("Test classa Massiv");
+        System.out.println("Test classa Number");
     }
 
     @BeforeTest
     public void beforeFirst() {
-        System.out.println("Nachnem MassiveTests");
+        System.out.println("Nachnem NumberTests");
     }
 
     @BeforeMethod
@@ -36,30 +38,33 @@ public class NumberTests {
 
     @AfterClass
     public void afterClass() {
-        System.out.println("Ito bil poslednii test classa Massiv. Kakoi sleduychi test?");
+        System.out.println("Ito bil poslednii test classa Number. Kakoi sleduychi test?");
     }
 
     @AfterTest
     public void afterThird() {
-        System.out.println("Zakonchili MassiveTests");
+        System.out.println("Zakonchili NumberTests");
     }
 
-    @BeforeGroups ("estkot")
+    @BeforeGroups("ravenstvo")
     public void beforeGroupCat() {
-        System.out.println("vot eto testi dlia kota");
+        System.out.println("sravnivaem s aktualnim");
     }
-    @AfterGroups ("estkot")
+
+    @AfterGroups("ravenstvo")
     public void afterGroupCat() {
-        System.out.println("testi pro kota proiden");
+        System.out.println("ravenstvo provereno");
     }
-    @Test
+
+    @Test(groups = "ravenstvo")
     public void testEquals() {
-        int actual = 5;
+        int actual = 4;
         Assert.assertEquals(userNumber, actual, "Ravenstvo ne podtverzdeno");
         System.out.println("class NumberTests " + "method testEquals");
     }
 
     @Test
+
     public void testCompare() {
         boolean expected = true;
         boolean actual = isCompare(userNumber);
